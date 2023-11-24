@@ -6,6 +6,7 @@
   bottom: 0px;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   background-color: rgb(29, 35, 39);
 }
 
@@ -21,6 +22,11 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+.Notes-list {
+  padding-inline-start: 0;
+  list-style-type: none;
 }
 
 .Note-link {
@@ -40,6 +46,16 @@
 .Note-link-lastUpdatedAt {
   font-size: 10px;
   color: darkgrey;
+}
+
+.Button {
+  padding: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(29, 35, 39);
+  border: none;
+  color: inherit;
 }
 
 .Button-create-note {
