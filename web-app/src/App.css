@@ -20,7 +20,6 @@
   margin-inline-start: 240px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
 }
 
@@ -39,8 +38,8 @@
   font-weight: bold;
 }
 
-.Note-link.active {
-  background-color: darkslategrey;
+.Note-link.selected {
+  background-color: darkslategrey !important;
 }
 
 .Note-link-lastUpdatedAt {
