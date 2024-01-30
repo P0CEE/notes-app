@@ -4,6 +4,7 @@ import { Toaster, toast } from 'sonner';
 
 import "./App.css";
 import Note from "./components/Note";
+import DarkMode from "./components/DarkMode";
 
 function App() {
   return (
@@ -18,12 +19,20 @@ function App() {
 
 function Main() {
   const [notes, setNotes] = React.useState(null);
+  const [selectedNoteId, setSelectedNoteId] = React.useState(null);
   const navigate = useNavigate();
 
   async function fetchNotes() {
-    const response = await fetch("/notes?_sort=id&_order=desc");
-    const data = await response.json();
-    setNotes(data);
+    try {
+      const response = await fetch("/notes?_sort=id&_order=desc");
+      if (!response.ok) {
+        throw new Error(`Error fetching notes. Status: ${response.status}`);
+      }
+      const data = await response.json();
+      setNotes(data);
+    } catch (error) {
+      console.error("Fetch notes error:", error);
+    }
   }
 
   async function createNote() {
@@ -61,7 +70,11 @@ function Main() {
             <ol className="Notes-list">
               {notes.map((note) => (
                 <li key={note.id}>
-                  <Link className="Note-link" to={`/notes/${note.id}`}>
+                  <Link
+                    className={`Note-link ${note.id === selectedNoteId ? 'selected' : ''}`}
+                    to={`/notes/${note.id}`}
+                    onClick={() => setSelectedNoteId(note.id)}
+                  >
                     {note.title}
                   </Link>
                 </li>
@@ -69,6 +82,7 @@ function Main() {
             </ol>
           ) : null}
         </div>
+        <DarkMode />
       </aside>
       <main className="Main">
         <Routes>
@@ -77,8 +91,6 @@ function Main() {
             path="/notes/:id"
             element={<Note onSaveSuccess={fetchNotes} />}
           />
-
-          {/* Ajoutez d'autres routes au besoin */}
         </Routes>
       </main>
     </div>

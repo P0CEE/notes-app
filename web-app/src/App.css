@@ -7,7 +7,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  background-color: rgb(29, 35, 39);
+  background-color: var(--body_aside);
 }
 
 .Loading {
@@ -21,6 +21,8 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  color: var(--body_color);
+  justify-content: center;
 }
 
 .Notes-list {
@@ -33,15 +35,18 @@
   flex-direction: column;
   gap: 6px;
   padding: 16px;
-  color: inherit;
+  color: var(--body_color);
   text-decoration: inherit;
   font-weight: bold;
 }
 
-.Note-link.selected {
-  background-color: darkslategrey !important;
+.Note-link:hover{
+  background-color: var(--body_selected);
 }
 
+.Note-link.selected {
+  background-color: var(--body_selected);
+}
 .Note-link-lastUpdatedAt {
   font-size: 10px;
   color: darkgrey;

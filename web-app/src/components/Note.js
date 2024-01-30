@@ -1,6 +1,7 @@
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import "./Note.css";
+import Loader from "./Loader"; 
 
 function Note({ onSaveSuccess }) {
   const { id } = useParams();
@@ -33,7 +34,7 @@ function Note({ onSaveSuccess }) {
       const saveNoteTimeout = setTimeout(() => {
         saveNoteAutomatically();
         setUnsavedChanges(false);
-      }, 1000); // Ajustez la durée du délai selon vos besoins
+      }, 1000);
 
       return () => clearTimeout(saveNoteTimeout);
     }
@@ -50,7 +51,7 @@ function Note({ onSaveSuccess }) {
   };
 
   if (!note) {
-    return "Chargement…";
+    return <Loader />; 
   }
 
   return (
@@ -60,6 +61,7 @@ function Note({ onSaveSuccess }) {
         type="text"
         value={note.title}
         onChange={handleTitleChange}
+        
       />
       <textarea
         className="Note-editable Note-content"

@@ -21,12 +21,14 @@
 .Note-title {
   font-size: 18px;
   font-weight: bold;
+  color: var(--body_color);
 }
 
 .Note-content {
   flex-grow: 1;
   resize: none;
   font-family: inherit;
+  color: var(--body_color);
 }
 
 .Note-actions {
