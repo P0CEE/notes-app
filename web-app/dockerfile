@@ -1,0 +1,19 @@
+FROM node:14-alpine
+
+WORKDIR /app
+
+COPY package*.json ./
+
+RUN npm install \
+    && npm cache clean --force \
+    && rm -rf /var/cache/apk/*
+
+COPY . .
+
+RUN chmod +x node_modules/.bin/react-scripts
+
+EXPOSE 3000
+
+ENV BROWSER=none
+
+CMD ["npm", "start"]
