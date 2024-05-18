@@ -1,19 +1,19 @@
 services:
-  json-server:
-    container_name: json-server
+  api-service:
+    container_name: api-service
     build:
       context: ./api
-      dockerfile: dockerfile
+      dockerfile: Dockerfile
     ports:
       - "4000:4000"
     networks:
       - app-network
 
-  react-app:
-    container_name: web-app
+  frontend-service:
+    container_name: frontend-service
     build:
       context: ./web-app
-      dockerfile: dockerfile
+      dockerfile: Dockerfile
     ports:
       - "8080:3000"
     networks:
