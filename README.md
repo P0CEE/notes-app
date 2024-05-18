@@ -18,7 +18,7 @@ Ce projet est une application web développée avec React et Docker. Il utilise 
 
 1. Clonez ce dépôt sur votre machine :
 ```
-git clone [https://github.com/votre-utilisateur/votre-repo.git](https://github.com/P0CEE/notes-app.git)
+[git clone (https://github.com/P0CEE/notes-app.git)](https://github.com/P0CEE/notes-app.git)
 ```
 
 2. Accédez au répertoire du projet :
