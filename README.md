@@ -12,38 +12,31 @@ Ce projet est une application web développée avec React et Docker. Il utilise 
 
 - Docker
 - Docker Compose
+  
 
 ## Utilisation :
 
 1. Clonez ce dépôt sur votre machine :
 
-\`\`\`bash
-git clone [https://github.com/votre-utilisateur/votre-repo.git](https://github.com/P0CEE/notes-app.git)
-\`\`\`
+- git clone [https://github.com/votre-utilisateur/votre-repo.git](https://github.com/P0CEE/notes-app.git)
 
 2. Accédez au répertoire du projet :
 
-\`\`\`bash
-cd notes-app
-\`\`\`
+- cd notes-app
 
 3. Démarrez les conteneurs avec Docker Compose :
 
-\`\`\`bash
-docker-compose up -d
-\`\`\`
+- docker-compose up -d 
+
 
 ## Modification du Proxy: 
 
 1. Accédez au répertoire web-app : 
 
-\`\`\`bash
-cd notes-app/web-app
-\`\`\`
+- cd notes-app/web-app
 
 2. Modifier l'ip du proxy avec celle de sa machine : 
 
-\`\`\`bash
-"proxy": "http://93.127.202.166:4000/"
-\`\`\`
+- "proxy": "http://93.127.202.166:4000/"
+
 
